@@ -19,40 +19,41 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         }
 
     }else{
-        echo "charger la page de connexion";
+        require_once(PATH_VIEWS."securite/connexion.html.php");
+
     }
 }
 
  //us1
 
  function connexion(string $login,string $password):void{
-     $error=[];
-    champ_obligatoire('login',$login,$error);
-    if(count($error)==0){
-        valid_email('login',$login,$error);
+     $errors=[];
+    champ_obligatoire('login',$login,$errors,"login obligatoire");
+    if(count($errors)==0){
+        valid_email('login',$login,$errors);
     }
-    champ_obligatoire('password',$password,$error);
+    champ_obligatoire('password',$password,$errors);
 
-    if(count($error)==0){
+    if(count($errors)==0){
         //
-        $user = find_user_login_password($login ,$password);
+        $user = find_user_login_password($login,$password);
 
         if(count($user)!=0){
             //utilisateur existe
             $_SESSION[KEY_USER_CONNECT]=$user;
-            header("location:".WEB_ROOT."controller=user&action=accueil");
+            header("location:".WEB_ROOT."?controller=user&action=accueil");
             exit();   
         }else{
             //utilisateur nexiste pas
-            $error['connexion']="login ou mdp incorrecte";
-            $_SESSION[KEY_ERRORS]=$error;
+            $errors['connexion']="login ou mdp incorrecte";
+            $_SESSION[KEY_ERRORS]=$errors;
             header("location:".WEB_ROOT);
             exit();
         }
        
     }else{
         //erreur de validation
-        $_SESSION[KEY_ERRORS]=$error;
+        $_SESSION[KEY_ERRORS]=$errors;
         header("location:".WEB_ROOT); 
         exit();
     }

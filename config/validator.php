@@ -16,6 +16,6 @@ function valid_email(string $key,string $data,array $error,string $message="emai
 
 }
 
-function valid_password(string $key , string $data,array $error,string $message = "password invalid"){
+function valid_password(string $key,string $data,array $error,string $message = "password invalid"){
 
 }

@@ -1,60 +1,35 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?= WEB_PUBLIC."css".DIRECTORY_SEPARATOR."style.connexion.css" ?>">
-</head>
-<body>
+<?php 
+  require_once(PATH_VIEWS."include".DIRECTORY_SEPARATOR."header.inc.html.php");
+  if (isset($_SESSION[KEY_ERRORS])) {
+    $errors=$_SESSION[KEY_ERRORS];
+    unset($_SESSION[KEY_ERRORS]);
+  }
+  
+ ?>
 
-<div class="login-box">
-  <h2>Login</h2>
-  <form method = "post" acttion="<?= WEB_ROOT ?>">
-  <input type="hidden" name="">
-    <div class="user-box">
-      <input type="text" name="login" >
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="password" >
-      <label>Password</label>
-    </div>
-   <button name="btn">connecter</button>
-  </form>
-</div>
-</body>
-</html> -->
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Animated Login Form</title>
-	<link rel="stylesheet" type="text/css" href="<?= WEB_PUBLIC."css".DIRECTORY_SEPARATOR."style.connexion.css" ?>">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<img class="wave" src="img/wave.png">
-	<div class="container">
-		<div class="img">
-			<img src="img/bg.svg">
-		</div>
 		<div class="login-content">
-			<form action="<?= WEB_ROOT ?>">
+			<!-- <form action="<?= WEB_ROOT ?>" method="POST">
       <input type="hidden" name="controller" value="securite">
       <input type="hidden" name="action" value="connexion">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
+              <?php 
+              if (isset($errors['connexion'])): 
+              ?>
+              <p style="color:red"><?=$errors['connexion'];?> </p>
+              <?php endif ?>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Username</h5>
+           		   		<h5>Username</h5> 
            		   		<input type="text" class="input" name="login">
+                      <?php 
+              if (isset($errors['login'])): 
+              ?>
+              <p style="color:red"><?=$errors['login'];?></p>
+              <?php endif ?>
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -64,13 +39,39 @@
            		   <div class="div">
            		    	<h5>Password</h5>
            		    	<input type="password" class="input" name="password">
+                     <?php 
+              if (isset($errors['password'])): 
+              ?>
+              <p style="color:red"><?=$errors['password']; ?></p>
+              <?php endif ?>
             	   </div>
             	</div>
             	<a href="#">Sign UP</a>
             	<input type="submit" class="btn" value="LOGIN">
-            </form>
+            </form> -->
+			<div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form action="<?= WEB_ROOT ?>" method="POST">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Email or Phone" name="login">
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password">
+          </div>
+          <div class="pass"><a href="#">Forgot password?</a></div>
+          <div class="row button">
+            <input type="submit" value="Login">
+          </div>
+          <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+        </form>
+      </div>
+    </div>
+
         </div>
     </div>
-    <script type="text/javascript" src="<?= WEB_PUBLIC."js".DIRECTORY_SEPARATOR."main.connexion.js" ?>"></script>
-</body>
-</html>
+    <?php 
+  require_once(PATH_VIEWS."include".DIRECTORY_SEPARATOR."footer.inc.html.php");
+ ?>
