@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         }
 
     }else{
-        echo "charger la page de connexio ";
+        echo "charger la page de connexion";
     }
 }
 
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
             //utilisateur existe
             $_SESSION[KEY_USER_CONNECT]=$user;
             header("location:".WEB_ROOT."controller=user&action=accueil");
-            exit();
+            exit();   
         }else{
             //utilisateur nexiste pas
             $error['connexion']="login ou mdp incorrecte";

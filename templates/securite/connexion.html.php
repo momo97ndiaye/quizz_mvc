@@ -44,6 +44,8 @@
 		</div>
 		<div class="login-content">
 			<form action="<?= WEB_ROOT ?>">
+      <input type="hidden" name="controller" value="securite">
+      <input type="hidden" name="action" value="connexion">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -52,7 +54,7 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
+           		   		<input type="text" class="input" name="login">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -61,11 +63,11 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
+           		    	<input type="password" class="input" name="password">
             	   </div>
             	</div>
             	<a href="#">Sign UP</a>
-            	<input type="submit" class="btn" value="Login">
+            	<input type="submit" class="btn" value="LOGIN">
             </form>
         </div>
     </div>
