@@ -1,55 +1,24 @@
 <?php 
-  require_once(PATH_VIEWS."include".DIRECTORY_SEPARATOR."header.inc.html.php");
   if (isset($_SESSION[KEY_ERRORS])) {
     $errors=$_SESSION[KEY_ERRORS];
     unset($_SESSION[KEY_ERRORS]);
   }
   
  ?>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-App</title>
+    <link rel="stylesheet" type="text/css" href="<?= WEB_PUBLIC."css".DIRECTORY_SEPARATOR."style.connexion.css" ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
 	<div class="tete">
 		le plaisir de jouer
 	</div>
-			<!-- <form action="<?= WEB_ROOT ?>" method="POST">
-      <input type="hidden" name="controller" value="securite">
-      <input type="hidden" name="action" value="connexion">
-				<img src="img/avatar.svg">
-				<h2 class="title">Welcome</h2>
-              <?php 
-              if (isset($errors['connexion'])): 
-              ?>
-              <p style="color:red"><?=$errors['connexion'];?> </p>
-              <?php endif ?>
-           		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<h5>Username</h5> 
-           		   		<input type="text" class="input" name="login">
-                      <?php 
-              if (isset($errors['login'])): 
-              ?>
-              <p style="color:red"><?=$errors['login'];?></p>
-              <?php endif ?>
-           		   </div>
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password" class="input" name="password">
-                     <?php 
-              if (isset($errors['password'])): 
-              ?>
-              <p style="color:red"><?=$errors['password']; ?></p>
-              <?php endif ?>
-            	   </div>
-            	</div>
-            	<a href="#">Sign UP</a>
-            	<input type="submit" class="btn" value="LOGIN">
-            </form> -->
 			<div class="container">
       <div class="wrapper">
         <div class="title"><span>Login Form</span></div>

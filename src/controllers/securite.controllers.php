@@ -18,6 +18,8 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
             require_once(PATH_VIEWS."securite/connexion.html.php");
         }elseif ($_REQUEST['action']=="register") {
             require_once(PATH_VIEWS."securite/register.html.php");
+        }elseif ($_REQUEST['action']=="deconnexion") {
+            logout();
         }
 
     }else{
@@ -59,4 +61,10 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         header("location:".WEB_ROOT); 
         exit();
     }
+ }
+
+ function logout(){
+     session_destroy();
+     header("location:".WEB_ROOT);
+            exit();
  }
