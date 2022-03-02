@@ -16,6 +16,8 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     if(isset($_REQUEST['action'])){
         if($_REQUEST['action']=="connexion"){
             require_once(PATH_VIEWS."securite/connexion.html.php");
+        }elseif ($_REQUEST['action']=="register") {
+            require_once(PATH_VIEWS."securite/register.html.php");
         }
 
     }else{

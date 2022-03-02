@@ -6,8 +6,9 @@
   }
   
  ?>
-
-		<div class="login-content">
+	<div class="tete">
+		le plaisir de jouer
+	</div>
 			<!-- <form action="<?= WEB_ROOT ?>" method="POST">
       <input type="hidden" name="controller" value="securite">
       <input type="hidden" name="action" value="connexion">
@@ -53,19 +54,35 @@
       <div class="wrapper">
         <div class="title"><span>Login Form</span></div>
         <form action="<?= WEB_ROOT ?>" method="POST">
+		<input type="hidden" name="controller" value="securite">
+      <input type="hidden" name="action" value="connexion">
+	  <?php 
+              if (isset($errors['connexion'])): 
+              ?>
+              <p style="color:red"><?=$errors['connexion'];?> </p>
+              <?php endif ?>
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Email or Phone" name="login">
+            <input type="text" placeholder="Login" name="login">
+			<?php 
+              if (isset($errors['login'])): 
+              ?>
+              <p style="color:red"><?=$errors['login'];?></p>
+              <?php endif ?>
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="password">
+			<?php 
+              if (isset($errors['password'])): 
+              ?>
+              <p style="color:red"><?=$errors['password']; ?></p>
+              <?php endif ?>
           </div>
-          <div class="pass"><a href="#">Forgot password?</a></div>
-          <div class="row button">
+          <div class="row button" id="row">
+		  <p><a href="<?= WEB_ROOT ?>?controller=securite&action=register">S'incrire pour jouer</a></p>
             <input type="submit" value="Login">
           </div>
-          <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
         </form>
       </div>
     </div>
