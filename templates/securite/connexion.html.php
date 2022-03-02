@@ -32,7 +32,7 @@
               <?php endif ?>
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Login" name="login">
+            <input type="text" placeholder="Login" name="login" id="login">
 			<?php 
               if (isset($errors['login'])): 
               ?>
@@ -41,7 +41,7 @@
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Password" name="password" id="password">
 			<?php 
               if (isset($errors['password'])): 
               ?>
@@ -50,7 +50,7 @@
           </div>
           <div class="row button" id="row">
 		  <p><a href="<?= WEB_ROOT ?>?controller=securite&action=register">S'incrire pour jouer</a></p>
-            <input type="submit" value="Login">
+            <input type="submit" value="LOGIN">
           </div>
         </form>
       </div>
