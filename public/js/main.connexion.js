@@ -22,11 +22,11 @@ inputs.forEach(input => {
 const login = document.getElementById('login')
 const password = document.getElementById('password')
 const form = document.getElementById('form')
-const errorElement = document.getElementById('wrapper')
+const errorElement = document.getElementById('small')
 
 form.addEventListener('submit', (e) => {
   let messages = []
-  if (name.value === '' || name.value == null) {
+  if (login.value === '' || login.value == null) {
     messages.push('Login is required')
   }
 

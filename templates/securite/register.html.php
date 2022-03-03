@@ -10,7 +10,8 @@
 </head>
 <body>
 	<div class="tete">
-		le plaisir de jouer
+    <img src="../img/logo.png" alt="">
+		Le Plaisir de Jouer
 	</div>
     <div class="content">
     <form action="<?= WEB_ROOT ?>" method="post">
@@ -51,6 +52,7 @@
     </div>
     </form>
     </div>
+    <script type="text/javascript" src="<?= WEB_PUBLIC."js".DIRECTORY_SEPARATOR."main.register.js" ?>"></script>
 </body>
 </html>
 

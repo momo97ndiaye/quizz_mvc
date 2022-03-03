@@ -25,6 +25,13 @@ body{
     background: black;
     color: #fff;
   }
+.tete img{
+    display: flex;
+    width: 5rem;
+    height: 4.5rem;
+    position: absolute;
+    left: 0;
+  }
 .content{
     background: cornsilk;
     height:100%;

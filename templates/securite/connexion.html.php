@@ -17,34 +17,32 @@
 </head>
 <body>
 	<div class="tete">
-		le plaisir de jouer
+    <img src="../img/logo.png" alt="">
+		Le Plaisir de Jouer
 	</div>
 			<div class="container">
-      <div class="wrapper">
+      <div class="wrapper" >
         <div class="title"><span>Login Form</span></div>
-        <form action="<?= WEB_ROOT ?>" method="POST">
-		<input type="hidden" name="controller" value="securite">
-      <input type="hidden" name="action" value="connexion">
-	  <?php 
-              if (isset($errors['connexion'])): 
-              ?>
+        <form action="<?= WEB_ROOT ?>" method="POST" id="form">
+        <?php if (isset($errors['connexion'])): ?>
               <p style="color:red"><?=$errors['connexion'];?> </p>
               <?php endif ?>
-          <div class="row">
+		<input type="hidden" name="controller" value="securite">
+      <input type="hidden" name="action" value="connexion">
+	       
+          <div class="row" >
             <i class="fas fa-user"></i>
             <input type="text" placeholder="Login" name="login" id="login">
-			<?php 
-              if (isset($errors['login'])): 
-              ?>
+            <small id="small" style="color:red"></small>
+		        	<?php  if (isset($errors['login'])): ?>
               <p style="color:red"><?=$errors['login'];?></p>
               <?php endif ?>
           </div>
-          <div class="row">
+          <div class="row" ">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="password" id="password">
-			<?php 
-              if (isset($errors['password'])): 
-              ?>
+            <small id="small" style="color:red"></small>
+			<?php if (isset($errors['password'])): ?>
               <p style="color:red"><?=$errors['password']; ?></p>
               <?php endif ?>
           </div>
@@ -58,6 +56,6 @@
 
         </div>
     </div>
-    <?php 
-  require_once(PATH_VIEWS."include".DIRECTORY_SEPARATOR."footer.inc.html.php");
- ?>
+    <script type="text/javascript" src="<?= WEB_PUBLIC."js".DIRECTORY_SEPARATOR."main.connexion.js" ?>"></script>
+</body>
+</html> 
