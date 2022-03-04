@@ -14,27 +14,45 @@
 		Le Plaisir de Jouer
 	</div>
     <div class="content">
-    <form action="<?= WEB_ROOT ?>" method="post">
+    <form action="<?= WEB_ROOT ?>" method="post" id="form">
+    <input type="hidden" name="controller" value="securite">
+      <input type="hidden" name="action" value="register">
     <div class="gauche">
     <div class="content">
     <h1>S'inscrire pour jouer</h1>
     <h5>Pour tester votre niveau de culture générale</h5>
-    <p>Prénom</p>
-    <input type="text" placeholder="Prenom">
-    <p>Nom</p>
-    <input type="text" placeholder="Nom">
-    <p>Login</p>
-    <input type="text" placeholder="Login">
-    <p>Password</p>
-    <input type="text" placeholder="Password">
-    <p>Confirm Password</p>
-    <input type="text" placeholder="Confirm Password">
+
+        <div class="input-control">
+            <p>Prénom</p>
+            <input type="text" placeholder="Prenom" id="prenom">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <p>Nom</p>
+            <input type="text" placeholder="nom" id="nom">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <p>Login</p>
+            <input type="text" placeholder="Login" id="login">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <p>Mot de Passe</p>
+            <input type="password" placeholder="Password" id="password">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <p>Confirmer Mot de Passe</p>
+            <input type="password" placeholder="Confirm Paasword" id="password2">
+            <div class="error"></div>
+        </div>
     <div class="pied">
     <p>Avatar</p>
     <button>Choisir un Fichier</button>
     </div>
     <div class="compte">
-    <button>Créer un Compte</button>
+    <button id="submit">Créer un Compte</button>
     </div>
     </div>
     </div>

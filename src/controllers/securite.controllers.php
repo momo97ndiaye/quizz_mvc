@@ -6,6 +6,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $login = $_POST['login'];
             $password = $_POST['password'];
             connexion($login,$password);
+        }elseif ($_REQUEST['action']=="register") {
+            # code...
         }
 
     }
